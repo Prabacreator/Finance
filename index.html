@@ -22,118 +22,26 @@ main {
 }
 section {
     width: 100%;
-	height: 100v%;
+	height: 100%;
 	display: block;
 	text-align: center;
 	justify-content: center;
 }
 
-a {
-    text-decoration: none!important;
-    color: #000000!important;
+iframe {
+    width: 100%;
+	height: 100%;
 }
 
 </style>
 </head>
 <body class="bg-light">
-    <main class="m-auto p-2">
+    <main class="m-auto">
     <section class="container">
-        <form class="form-control shadow" name="sheet">
-        <table class="table">
-            <tr>
-                <th class="text-center" colspan="2">
-                    <h2>Finance</h2>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Date
-                </th>
-                <th>
-                    <input class="form-control" type="date" name="Date" placeholder="Date" required>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    Type
-                </th>
-                <td>
-                    <select class="form-select" name="Type">
-                      <option selected>Expenditure</option></option>
-                      <option value="Income">Income</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <th>Nominal</th>
-                <td>
-                <input class="form-control" type="number" name="Nominal" required>
-                </td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                <input class="form-control" type="text" name="Description" required>
-                </td>
-            </tr>
-            
-            <tr>
-                <th colspan="2">
-                <button class="btn border-dark save w-100 mb-5" type="submit">Save
-                </button>
-                <button class="btn btn-outline-dark loading d-none w-100 mb-5" type="button" disabled>
-                    <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                    <span>Loading ..</span>
-                </button>
-                <a href="">
-                <button class="alert alert-danger error d-none w-100"type="button"><strong>Error</strong></button>
-                </a>
-                <a href="https://docs.google.com/spreadsheets/d/1xzL2yuO7RSl2C0-BffF8tMtenPhR6YcuILE5xjGqZuU/edit?usp=drivesdk">View the google sheets</a>
-                </th>
-            </tr>
-        </table>
-        </form>
+        <iframe src="https://script.google.com/macros/s/AKfycbz0Z352dp19Kk0bp-WnMmop5kADfK3Q8B5LLfLR86647oSiBWiLDhvAOWCXigeHUhBJ/exec"></iframe>
     </section>
     </main>
- <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxZnjtuUQqWcf_fFSsSndPqoONLnWI6WHBEQkjaJBl6XqPdJETM2KLZvaxA8HiX3j9e/exec'
-    const form = document.forms['sheet']
-    const save = document.querySelector('.save')
-    const loading = document.querySelector('.loading')
-    const error = document.querySelector('.error')
-
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      showLoadingIndicator()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => showSuccessMessage(response))
-        .catch(error => showErrorMessage(error))
-    })
-
-    function showLoadingIndicator () {
-      save.classList.add('d-none')
-      loading.classList.remove('d-none')
-    }
-
-    function showSuccessMessage (response) {
-      console.log('Success!', response)
-      setTimeout(() => {
-        save.classList.remove('d-none');
-        loading.classList.add('d-none');
-        form.reset();
-      }, 1000)
-    }
-
-    function showErrorMessage (error) {
-      console.error('Error!', error.message)
-      setTimeout(() => {
-        error.classList.remove('d-none');
-        loading.classList.add('d-none');
-      }, 100)
-    }
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://script.google.com/macros/s/AKfycbxSB6RXy0K3uuqbDbIZOSWU3EN-lNAWUaLm3VCM9BzbrU0OFWnrMzSNLHvaayxav3LT9w/exec"></script>
 </body>
 </html>
 
-<!---" https://script.google.com/macros/s/AKfycbxZnjtuUQqWcf_fFSsSndPqoONLnWI6WHBEQkjaJBl6XqPdJETM2KLZvaxA8HiX3j9e/exec "--->
